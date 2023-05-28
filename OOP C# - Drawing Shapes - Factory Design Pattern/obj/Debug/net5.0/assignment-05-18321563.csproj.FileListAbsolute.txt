@@ -1,0 +1,16 @@
+C:\Users\Thego\Documents\CSFiles\CS264\assignment-05-18321563\bin\Debug\net5.0\assignment-05-18321563.exe
+C:\Users\Thego\Documents\CSFiles\CS264\assignment-05-18321563\bin\Debug\net5.0\assignment-05-18321563.deps.json
+C:\Users\Thego\Documents\CSFiles\CS264\assignment-05-18321563\bin\Debug\net5.0\assignment-05-18321563.runtimeconfig.json
+C:\Users\Thego\Documents\CSFiles\CS264\assignment-05-18321563\bin\Debug\net5.0\assignment-05-18321563.runtimeconfig.dev.json
+C:\Users\Thego\Documents\CSFiles\CS264\assignment-05-18321563\bin\Debug\net5.0\assignment-05-18321563.dll
+C:\Users\Thego\Documents\CSFiles\CS264\assignment-05-18321563\bin\Debug\net5.0\ref\assignment-05-18321563.dll
+C:\Users\Thego\Documents\CSFiles\CS264\assignment-05-18321563\bin\Debug\net5.0\assignment-05-18321563.pdb
+C:\Users\Thego\Documents\CSFiles\CS264\assignment-05-18321563\obj\Debug\net5.0\assignment-05-18321563.csprojAssemblyReference.cache
+C:\Users\Thego\Documents\CSFiles\CS264\assignment-05-18321563\obj\Debug\net5.0\assignment-05-18321563.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Thego\Documents\CSFiles\CS264\assignment-05-18321563\obj\Debug\net5.0\assignment-05-18321563.AssemblyInfoInputs.cache
+C:\Users\Thego\Documents\CSFiles\CS264\assignment-05-18321563\obj\Debug\net5.0\assignment-05-18321563.AssemblyInfo.cs
+C:\Users\Thego\Documents\CSFiles\CS264\assignment-05-18321563\obj\Debug\net5.0\assignment-05-18321563.csproj.CoreCompileInputs.cache
+C:\Users\Thego\Documents\CSFiles\CS264\assignment-05-18321563\obj\Debug\net5.0\assignment-05-18321563.dll
+C:\Users\Thego\Documents\CSFiles\CS264\assignment-05-18321563\obj\Debug\net5.0\ref\assignment-05-18321563.dll
+C:\Users\Thego\Documents\CSFiles\CS264\assignment-05-18321563\obj\Debug\net5.0\assignment-05-18321563.pdb
+C:\Users\Thego\Documents\CSFiles\CS264\assignment-05-18321563\obj\Debug\net5.0\assignment-05-18321563.genruntimeconfig.cache

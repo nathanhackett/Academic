@@ -1,0 +1,167 @@
+@startuml
+interface Color {
+    + showShapeColor() : string
+}
+class BlueColor {
+    + showShapeColor() : string
+}
+class RedColor {
+    + showShapeColor() : string
+}
+class GreenColor {
+    + showShapeColor() : string
+}
+class YellowColor {
+    + showShapeColor() : string
+}
+abstract class ShapeCreator {
+    + {abstract} FactoryMethod() : IShape
+    + Add() : string
+    + ShapeCreator(color:Color)
+    + {abstract} draw() : void
+}
+class RectangleFactory {
+    + RectangleFactory(color:Color)
+    + <<override>> draw() : void
+    + <<override>> FactoryMethod() : IShape
+}
+class CircleFactory {
+    + CircleFactory(color:Color)
+    + <<override>> draw() : void
+    + <<override>> FactoryMethod() : IShape
+}
+class EllipseFactory {
+    + EllipseFactory(color:Color)
+    + <<override>> draw() : void
+    + <<override>> FactoryMethod() : IShape
+}
+class LineFactory {
+    + LineFactory(color:Color)
+    + <<override>> draw() : void
+    + <<override>> FactoryMethod() : IShape
+}
+class PolylineFactory {
+    + PolylineFactory(color:Color)
+    + <<override>> draw() : void
+    + <<override>> FactoryMethod() : IShape
+}
+class PolygonFactory {
+    + PolygonFactory(color:Color)
+    + <<override>> draw() : void
+    + <<override>> FactoryMethod() : IShape
+}
+class PathFactory {
+    + PathFactory(color:Color)
+    + <<override>> draw() : void
+    + <<override>> FactoryMethod() : IShape
+}
+interface IShape {
+    + AddShape() : string
+}
+class RectangleShape {
+    + X : int <<get>> <<set>>
+    + Y : int <<get>> <<set>>
+    + H : int <<get>> <<set>>
+    + W : int <<get>> <<set>>
+    + Stroke : string <<get>> <<set>>
+    + StrokeWidth : int <<get>> <<set>>
+    + Fill : string <<get>> <<set>>
+    + RectangleShape(color:string)
+    + RectangleShape(x:int, y:int, h:int, w:int, s:string, sw:int, f:string)
+    + AddShape() : string
+}
+class CircleShape {
+    + X : int <<get>> <<set>>
+    + Y : int <<get>> <<set>>
+    + R : int <<get>> <<set>>
+    + Stroke : string <<get>> <<set>>
+    + StrokeWidth : int <<get>> <<set>>
+    + Fill : string <<get>> <<set>>
+    + CircleShape(color:string)
+    + CircleShape(x:int, y:int, r:int, s:string, sw:int, f:string)
+    + AddShape() : string
+}
+class EllipseShape {
+    + X : int <<get>> <<set>>
+    + Y : int <<get>> <<set>>
+    + RX : int <<get>> <<set>>
+    + RY : int <<get>> <<set>>
+    + Stroke : string <<get>> <<set>>
+    + StrokeWidth : int <<get>> <<set>>
+    + Fill : string <<get>> <<set>>
+    + EllipseShape(color:string)
+    + EllipseShape(x:int, y:int, rx:int, ry:int, s:string, sw:int, f:string)
+    + AddShape() : string
+}
+class LineShape {
+    + X1 : int <<get>> <<set>>
+    + Y1 : int <<get>> <<set>>
+    + X2 : int <<get>> <<set>>
+    + Y2 : int <<get>> <<set>>
+    + Stroke : string <<get>> <<set>>
+    + StrokeWidth : int <<get>> <<set>>
+    + Fill : string <<get>> <<set>>
+    + LineShape(color:string)
+    + LineShape(x1:int, y1:int, x2:int, y2:int, s:string, sw:int, f:string)
+    + AddShape() : string
+}
+class PolylineShape {
+    + Points : string <<get>> <<set>>
+    + Stroke : string <<get>> <<set>>
+    + StrokeWidth : int <<get>> <<set>>
+    + Fill : string <<get>> <<set>>
+    + PolylineShape(color:string)
+    + PolylineShape(points:string, s:string, sw:int, f:string)
+    + AddShape() : string
+}
+class PolygonShape {
+    + Points : string <<get>> <<set>>
+    + Stroke : string <<get>> <<set>>
+    + StrokeWidth : int <<get>> <<set>>
+    + Fill : string <<get>> <<set>>
+    + PolygonShape(color:string)
+    + PolygonShape(points:string, s:string, sw:int, f:string)
+    + AddShape() : string
+}
+class PathShape {
+    + Points : string <<get>> <<set>>
+    + Stroke : string <<get>> <<set>>
+    + StrokeWidth : int <<get>> <<set>>
+    + Fill : string <<get>> <<set>>
+    + PathShape(color:string)
+    + PathShape(points:string, s:string, sw:int, f:string)
+    + AddShape() : string
+}
+class ShapeClient {
+    + Main() : void
+    + ClientCode(creator:ShapeCreator) : void
+}
+class Program {
+    {static} Main(args:string[]) : void
+}
+Color <|-- BlueColor
+Color <|-- RedColor
+Color <|-- GreenColor
+Color <|-- YellowColor
+ShapeCreator <|-- RectangleFactory
+ShapeCreator <|-- CircleFactory
+ShapeCreator <|-- EllipseFactory
+ShapeCreator <|-- LineFactory
+ShapeCreator <|-- PolylineFactory
+ShapeCreator <|-- PolygonFactory
+ShapeCreator <|-- PathFactory
+IShape <|-- RectangleShape
+RectangleShape o-> "rand" Random
+IShape <|-- CircleShape
+CircleShape o-> "rand" Random
+IShape <|-- EllipseShape
+EllipseShape o-> "rand" Random
+IShape <|-- LineShape
+LineShape o-> "rand" Random
+IShape <|-- PolylineShape
+PolylineShape o-> "rand" Random
+IShape <|-- PolygonShape
+PolygonShape o-> "rand" Random
+IShape <|-- PathShape
+PathShape o-> "rand" Random
+@enduml

@@ -1,0 +1,376 @@
+// OS: Windows 10
+// Re-design of my Assignment 02 
+// Factory Method Factory Software Design Pattern 
+
+using System;
+using System.IO;
+using System.Text;
+using System.Collections.Generic;
+
+// Note: This core program is from:  https://refactoring.guru/design-patterns/factory-method/csharp/example
+// I did not write this program! Please refer to the code owner at link above.
+// However, I have adapted the program to use the same Shape example used earlier.
+
+namespace MyFactoryMethod
+{
+    abstract class ShapeCreator
+    {
+        public abstract IShape FactoryMethod();
+        public string Add()
+        {
+            // Call the factory method to create a Product object.
+            var shape = FactoryMethod();
+            return shape.AddShape();
+        }
+        public string Display()
+        {
+            // Call the factory method to create a Product object.
+            var shape = FactoryMethod();
+            return shape.AddShape();
+        }
+    }
+    class RectangleFactory : ShapeCreator
+    {
+        public override IShape FactoryMethod()
+        {
+            return new RectangleShape();
+        }
+    }
+
+    class CircleFactory : ShapeCreator
+    {
+        public override IShape FactoryMethod()
+        {
+            return new CircleShape();
+        }
+    }
+    class EllipseFactory : ShapeCreator
+    {
+        public override IShape FactoryMethod()
+        {
+            return new EllipseShape();
+        }
+    }
+    class LineFactory : ShapeCreator
+    {
+        public override IShape FactoryMethod()
+        {
+            return new LineShape();
+        }
+    }
+    class PolylineFactory : ShapeCreator
+    {
+        public override IShape FactoryMethod()
+        {
+            return new PolylineShape();
+        }
+    }
+    class PolygonFactory : ShapeCreator
+    {
+        public override IShape FactoryMethod()
+        {
+            return new PolygonShape();
+        }
+    }
+    class PathFactory : ShapeCreator
+    {
+        public override IShape FactoryMethod()
+        {
+            return new PathShape();
+        }
+    }
+
+    // The Product interface declares the operations that all concrete products
+    // must implement.
+    public interface IShape
+    {
+        public string AddShape();
+    }
+
+    // Concrete Products provide various implementations of the Product
+    // interface.
+    class RectangleShape : IShape
+    {
+        Random rand = new Random();
+        public int X { get; set; }  // rect top left x-coordinate
+        public int Y { get; set; }  // rect top left y-coordinate
+        public int H { get; set; }  // rect height
+        public int W { get; set; } // rect width
+        public string Stroke { get; set; } //rect stroke
+        public int StrokeWidth { get; set; } // rect strokewidth
+        public string Fill { get; set; } //rect fill
+
+        public RectangleShape() { X = rand.Next(1, 250); Y = rand.Next(1, 250); H = rand.Next(1, 250); W = rand.Next(1, 250); Stroke = "black"; StrokeWidth = rand.Next(1, 5); Fill = "red";} //default constructer
+        public RectangleShape(int x, int y, int h, int w, string s, int sw, string f) { X = x; Y = y; H = h; W = w; Stroke = s; StrokeWidth = sw; Fill = f;} //user input
+           
+        public string AddShape()
+        {
+            // convert the object to an SVG element descriptor string for circle
+            string dispSVG = String.Format(@"   <rect x=""{0}"" y=""{1}"" height=""{2}"" width=""{3}"" stroke=""{4}"" stroke-width=""{5}"" fill=""{6}""/>", X, Y, H, W, Stroke, StrokeWidth, Fill);
+            return dispSVG;
+        }
+    }
+    class CircleShape : IShape
+    {
+        Random rand = new Random();
+        public int X { get; set; }  // circle centre x-coordinate
+        public int Y { get; set; }  // circle centre y-coordinate
+        public int R { get; set; }  // circle radius
+        public string Stroke { get; set; } //circle stroke
+        public int StrokeWidth { get; set; } // circle strokewidth
+        public string Fill { get; set; } //circle fill
+
+        public CircleShape() { X = rand.Next(1, 250); Y = rand.Next(1, 250); R = rand.Next(1, 250); Stroke = "black"; StrokeWidth = rand.Next(1, 5); Fill = "yellow";} //default constructer
+        public CircleShape(int x, int y, int r, string s, int sw, string f) { X = x; Y = y; R = r; Stroke = s; StrokeWidth = sw; Fill = f;} //user input
+           
+        public string AddShape()
+        {
+            // convert the object to an SVG element descriptor string for circle
+            string dispSVG = String.Format(@"   <circle cx=""{0}"" cy=""{1}"" r=""{2}"" stroke=""{3}"" stroke-width=""{4}"" fill=""{5}""/>", X, Y, R, Stroke, StrokeWidth, Fill);
+            return dispSVG;
+        }
+    }
+
+    class EllipseShape : IShape
+    {
+        Random rand = new Random();
+        public int X { get; set; }  // ellipse centre x-coordinate
+        public int Y { get; set; }  // ellipse centre y-coordinate
+        public int RX { get; set; }  // ellipse x rad
+        public int RY { get; set; } // ellipse y rad 
+        public string Stroke { get; set; } //ellipse stroke
+        public int StrokeWidth { get; set; } // ellipse strokewidth
+        public string Fill { get; set; } //ellipse fill
+
+        public EllipseShape() { X = rand.Next(1, 250); Y = rand.Next(1, 250); RX = rand.Next(1, 250); RY = rand.Next(1, 250); Stroke = "black"; StrokeWidth = rand.Next(1, 5); Fill = "blue"; }  //default constructer
+        public EllipseShape(int x, int y, int rx, int ry, string s, int sw, string f) { X = x; Y = y; RX = rx; RY = ry ; Stroke = s; StrokeWidth = sw; Fill = f;} //user input
+           
+        public string AddShape()
+        {
+            // convert the object to an SVG element descriptor string for circle
+            string dispSVG = String.Format(@"   <ellipse cx=""{0}"" cy=""{1}"" rx=""{2}"" ry=""{3}"" stroke=""{4}"" stroke-width=""{5}"" fill=""{6}""/>", X, Y, RX, RY, Stroke, StrokeWidth, Fill);
+            return dispSVG;
+        }
+    }
+
+    class LineShape : IShape
+    {
+        Random rand = new Random();
+        public int X1 { get; set; } 
+        public int Y1 { get; set; } 
+        public int X2 { get; set; }
+        public int Y2 { get; set; }
+        public string Stroke { get; set; } 
+        public int StrokeWidth { get; set; }
+        public string Fill { get; set; }
+
+        public LineShape() { X1 = rand.Next(1, 250); Y1 = rand.Next(1, 250); X2 = rand.Next(1, 250); Y2 = rand.Next(1, 250); Stroke = "black"; StrokeWidth = rand.Next(1, 5); Fill = "black";} //default constructer
+        public LineShape(int x1, int y1, int x2, int y2, string s, int sw, string f) { X1 = x1; Y1 = y1; X2 = x2; Y2 = y2; Stroke = s; StrokeWidth = sw; Fill = f;} //user input
+           
+        public string AddShape()
+        {
+            // convert the object to an SVG element descriptor string for circle
+            string dispSVG = String.Format(@"   <line x1=""{0}"" y1=""{1}"" x2=""{2}"" y2=""{3}"" stroke=""{4}"" stroke-width=""{5}"" fill=""{6}""/>", X1, Y1, X2, Y2, Stroke, StrokeWidth, Fill);
+            return dispSVG;
+        }
+    }
+
+    class PolylineShape : IShape
+    {
+        Random rand = new Random();
+        public string Points { get; set; }
+        public string Stroke { get; set; } 
+        public int StrokeWidth { get; set; }
+        public string Fill { get; set; }
+        public PolylineShape() { Points = "0,40 40,40 40,80 80,80 80,120 120,120 120,160"; Stroke = "black"; StrokeWidth = rand.Next(1, 5); Fill = "black";}  //default constructer
+        //https://www.w3schools.com/graphics/svg_polyline.asp
+        public PolylineShape(string points, string s, int sw, string f) { Points = points; Stroke = s; StrokeWidth = sw; Fill = f; } //user input
+           
+        public string AddShape()
+        {
+            // convert the object to an SVG element descriptor string for circle
+            string dispSVG = String.Format(@"   <polyline points=""{0}"" stroke=""{1}"" stroke-width=""{2}"" fill=""{3}""/>", Points, Stroke, StrokeWidth, Fill);
+            return dispSVG;
+        }
+    }
+
+    class PolygonShape : IShape
+    {
+        Random rand = new Random();
+        public string Points { get; set; }
+        public string Stroke { get; set; }
+        public int StrokeWidth { get; set; }
+        public string Fill { get; set; }
+
+        public PolygonShape() { Points = "20,20 40,25 60,40 80,120 120,140 200,180"; Stroke = "black"; StrokeWidth = rand.Next(1, 5); Fill = "blue";} //default constructer
+        public PolygonShape(string points, string s, int sw, string f) { Points = points; Stroke = s; StrokeWidth = sw; Fill = f;} //user input
+           
+        public string AddShape()
+        {
+            // convert the object to an SVG element descriptor string for circle
+            string dispSVG = String.Format(@"   <polygon d=""{0}"" stroke=""{1}"" stroke-width=""{2}"" fill=""{3}""/>", Points, Stroke, StrokeWidth, Fill);
+            return dispSVG;
+        }
+    }
+
+    class PathShape : IShape
+    {
+        Random rand = new Random();
+        public string Points { get; set; }
+        public string Stroke { get; set; }
+        public int StrokeWidth { get; set; }
+        public string Fill { get; set; }
+
+        public PathShape() { Points = "M150 150 L75 350 L225 350 Z"; Stroke = "black"; StrokeWidth = rand.Next(1, 5); Fill = "blue";} //default constructer
+        public PathShape(string points, string s, int sw, string f) { Points = points; Stroke = s; StrokeWidth = sw; Fill = f;} //user input
+           
+        public string AddShape()
+        {
+            // convert the object to an SVG element descriptor string for circle
+            string dispSVG = String.Format(@"   <path d=""{0}"" stroke=""{1}"" stroke-width=""{2}"" fill=""{3}""/>", Points, Stroke, StrokeWidth, Fill);
+            return dispSVG;
+        }
+    }
+
+
+    class ShapeClient
+    {
+        public void Main()
+        {
+            Console.WriteLine("Select Shape to Launch App With: (Press H for Help)");
+            while (true)
+            {
+                string sc = Console.ReadLine();
+                if (sc.Equals("q") || sc.Equals("Q"))
+                {
+                    Console.WriteLine("Quitting1");
+                    break;
+                }
+                else if (sc.Equals("h") || sc.Equals("H")){
+                    Console.WriteLine("Commands: ");
+                    Console.WriteLine("<Shape> -> A     Add <shape> to canvas");
+                    Console.WriteLine("|-------------------------------------|");
+                    Console.WriteLine("C                Clear canvas");
+                    Console.WriteLine("D                Display Canvas");
+                    Console.WriteLine("S                Save canvas to SVG file");
+                    Console.WriteLine("Q                Quit");
+                    Console.WriteLine();
+                } else {
+                    switch (sc)
+                    {
+                        //Interactive Functionality
+                        case "Rectangle":
+                            Console.WriteLine("App: Launched with Rectangle Shape:");
+                            ClientCode(new RectangleFactory());
+                            break;
+                        case "Circle":
+                            Console.WriteLine("App: Launched with Circle Shape:");
+                            ClientCode(new CircleFactory());
+                            break;
+                        case "Ellipse":
+                            Console.WriteLine("App: Launched with Ellipse Shape:");
+                            ClientCode(new EllipseFactory());
+                            break;
+                        case "Line":
+                            Console.WriteLine("App: Launched with Line Shape:");
+                            ClientCode(new LineFactory());
+                            break;
+                        case "Polyline":
+                            Console.WriteLine("App: Launched with Polyline Shape:");
+                            ClientCode(new PolylineFactory());
+                            break;
+                        case "Polygon":
+                            Console.WriteLine("App: Launched with Polygon Shape:");
+                            ClientCode(new PolygonFactory());
+                            break;
+                        case "Path":
+                            Console.WriteLine("App: Launched with Path Shape:");
+                            ClientCode(new PathFactory());
+                            break;
+                        default:
+                            Console.WriteLine("Invalid Input");
+                            break;
+                    }
+                }
+            }
+        }
+
+        public void ClientCode(ShapeCreator creator)
+        {
+            List<String> Shapes = new List<String>();
+
+            while (true) {
+                string sc = Console.ReadLine();
+                if (sc.Equals("q") || sc.Equals("Q"))
+                {
+                    Console.WriteLine("Quitting2");
+                    break;
+                }
+                else
+                {
+                    switch (sc)
+                    {
+                        case "A":
+                            Shapes.Add(creator.Add());
+                            Console.WriteLine("Added New Shape!");
+                        break;
+                        case "S":
+                        String path = @"./Shapes.svg";
+                            //https://docs.microsoft.com/en-us/dotnet/api/system.io.file.create?view=net-5.0
+                            using (FileStream fs = File.Create(path))
+                            {
+                                using (StreamWriter sw = File.AppendText(path))
+                                {
+                                    foreach(var item in Shapes)
+                                    {
+                                        //sw.WriteLine("".PadLeft(3, ' ') + item);
+                                // insert open svg tag into first line
+                                byte[] info = new UTF8Encoding(true).GetBytes(@"<svg height=""2000"" width=""2000"" xmlns=""http://www.w3.org/2000/svg"">" + Environment.NewLine +
+                                
+                                );
+                                // Add some information to the file.
+                                fs.Write(info, 0, info.Length);
+                                    }
+                                }
+                            }
+                            //add close tag to the end
+                            using (StreamWriter sw = File.AppendText(path))
+                            {
+                                sw.WriteLine(Environment.NewLine + "</svg>");
+                            }
+                            Console.WriteLine("Canvas saved to SVG");
+                            break;
+                        case "C":
+                            path = @"./Shapes.svg";
+                            using (StreamWriter sw = File.AppendText(path))
+                            {
+                                File.WriteAllText(path,string.Empty);
+                            }
+                            Console.WriteLine("Clearing Canvas!");
+                            break;
+                        case "D":
+                            foreach(var item in Shapes)
+                            {
+                                Console.WriteLine(item);
+                            }
+                            break;
+                        case "Q":
+                            break;
+                        default:
+                            Console.WriteLine("Invalid Input");
+                            break;
+                    }
+                }
+            }
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(); new ShapeClient().Main();
+        }
+    }
+}
+

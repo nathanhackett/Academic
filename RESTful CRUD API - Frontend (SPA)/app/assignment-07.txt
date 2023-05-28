@@ -1,0 +1,9 @@
+mobilePhones
+
+[{"_id":"5eb08ba0efc559ca452993ae","Manufacturer":"req.body.Manufacturer","Model":"req.body.Model","Price":700,"createdAt":"2020-05-04T21:39:44.474Z","updatedAt":"2020-05-04T21:39:44.474Z","__v":0}]
+
+
+
+orderDetails
+
+[{"_id":"5eb08da6efc559ca452993b0","Name":"req.body.Name","Phones_Purchased":"req.body.Phones_Purchased","Quantity":2,"OrderNo":"req.body.OrderNo","createdAt":"2020-05-04T21:48:22.154Z","updatedAt":"2020-05-04T21:48:22.154Z","__v":0},{"_id":"5eb08f812874f699fae4e37f","createdAt":"2020-05-04T21:56:17.213Z","updatedAt":"2020-05-04T21:56:17.213Z","__v":0}]

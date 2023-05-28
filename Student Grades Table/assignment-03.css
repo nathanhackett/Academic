@@ -1,0 +1,51 @@
+.table {
+  border-collapse: collapse;
+  border-color: #000;
+  margin: 0px auto !important;
+}
+
+.table th {
+  font-family: sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  padding: 10px 5px;
+  border-style: solid;
+  border-width: 1px;
+  color: #000;
+  background-color: #999;
+}
+
+.table .head {
+  font-weight: bold;
+  text-align: center;
+  vertical-align: top;
+  padding: 10px;
+}
+
+.table td {
+  font-family: sans-serif;
+  font-size: 14px;
+  padding: 10px 5px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #000;
+}
+
+.table tr:nth-child(odd) {
+  background-color: #cccccc;
+}
+
+.table .center {
+  text-align: center;
+}
+
+.table .left {
+  text-align: left;
+  vertical-align: top
+}
+
+.button {
+  text-align: center;
+  padding: 10px;
+  font-family: sans-serif;
+}

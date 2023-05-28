@@ -1,0 +1,136 @@
+<html>
+  <head>
+	<link rel="stylesheet" type="text/css" href="assignment-03.css"/>
+  </head>
+  <body onload="Edit()">
+    <h2 align="center"> Student Grades Table</h2>
+    <table class="table" id="Grades">
+      <tr>
+        <th class="head">Student Name</th>
+        <th class="head">Student ID</th>
+        <th class="head">Assingment 1</th>
+        <th class="head">Assignment 2</th>
+        <th class="head">Assignment 3</th>
+        <th class="head">Assignment 4</th>
+        <th class="head">Assignment 5</th>
+        <th class="head">Average Grade</th>
+      </tr>
+      <tr>
+        <td class="left" contenteditable="false">James Malone</td>
+        <td class="left" contenteditable="false">12403980</td>
+        <td class="center">-</td>
+        <td class="center">-</td>
+        <td class="center">-</td>
+        <td class="center">-</td>
+        <td class="center">-</td>
+        <td class="center" contenteditable="false">-</td>
+      </tr>
+      <tr>
+        <td class="left" contenteditable="false">Niamh Dunne</td>
+        <td class="left" contenteditable="false">12953052</td>
+        <td class="center">-</td>
+        <td class="center">-</td>
+        <td class="center">-</td>
+        <td class="center">-</td>
+        <td class="center">-</td>
+        <td class="center" contenteditable="false">-</td>
+      </tr>
+      <tr>
+        <td class="left" contenteditable="false">Ciara Clarke</td>
+        <td class="left" contenteditable="false">11050258</td>
+        <td class="center">-</td>
+        <td class="center">-</td>
+        <td class="center">-</td>
+        <td class="center">-</td>
+        <td class="center">-</td>
+        <td class="center" contenteditable="false">-</td>
+      </tr>
+      <tr>
+        <td class="left" contenteditable="false">Nathan Callan</td>
+        <td class="left" contenteditable="false">12230538</td>
+        <td class="center">-</td>
+        <td class="center">-</td>
+        <td class="center">-</td>
+        <td class="center">-</td>
+        <td class="center">-</td>
+        <td class="center">-</td>
+      </tr>
+      <tr>
+        <td class="left" contenteditable="false">Ciaran Anderson</td>
+        <td class="left" contenteditable="false">12205593</td>
+        <td class="center">-</td>
+        <td class="center">-<br></td>
+        <td class="center">-</td>
+        <td class="center">-</td>
+        <td class="center">-</td>
+        <td class="center" contenteditable="false">-</td>
+      </tr>
+      <tr>
+        <td class="left" contenteditable="false">Jason O'Callaghan</td>
+        <td class="left" contenteditable="false">11405829</td>
+        <td class="center">-</td>
+        <td class="center">-</td>
+        <td class="center">-</td>
+        <td class="center">-</td>
+        <td class="center">-</td>
+        <td class="center" contenteditable="false">-</td>
+      </tr>
+      <tr>
+        <td class="left" contenteditable="false">Katie Sullivan</td>
+        <td class="left" contenteditable="false">12920535</td>
+        <td class="center">-</td>
+        <td class="center">-</td>
+        <td class="center">-</td>
+        <td class="center">-</td>
+        <td class="center">-</td>
+        <td class="center" contenteditable="false">-</td>
+      </tr>
+      <tr>
+        <td class="left" contenteditable="false">Aisling Casey</td>
+        <td class="left" contenteditable="false">11490258</td>
+        <td class="center">-</td>
+        <td class="center">-</td>
+        <td class="center">-</td>
+        <td class="center">-</td>
+        <td class="center">-</td>
+        <td class="center" contenteditable="false">-</td>
+      </tr>
+      <tr>
+        <td class="left" contenteditable="false">Lauren Connolly</td>
+        <td class="left" contenteditable="false">12073892</td>
+        <td class="center">-</td>
+        <td class="center">-</td>
+        <td class="center">-</td>
+        <td class="center">-</td>
+        <td class="center">-</td>
+        <td class="center" contenteditable="false">-</td>
+      </tr>
+      <tr>
+        <td class="left" contenteditable="false">Michael Byrne</td>
+        <td class="left" contenteditable="false">12038793</td>
+        <td class="center">-</td>
+        <td class="center">-</td>
+        <td class="center">-</td>
+        <td class="center">-</td>
+        <td class="center">-</td>
+        <td class="center" contenteditable="false">-</td>
+      </tr>
+    </table>
+    <table class="table" id="Unsubmitted">
+      <thead>
+        <tr>
+            <th class="head">Unsubmitted</th>
+        </tr>
+      </thead>
+        <tr>
+            <td class="center" contenteditable="false">-</td>
+        </tr>
+    </table>
+   <div class="button" id="button">
+      <button class="button" onClick="Average(); Unsubmitted()">Calculate Grade</button>
+    </div>
+  </body>
+	<footer>
+		<script src="assignment-03.js"></script>
+	</footer>
+</html>

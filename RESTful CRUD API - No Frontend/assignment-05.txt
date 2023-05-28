@@ -1,0 +1,211 @@
+//this is the dump after executing CRUD functionalities
+
+[
+  {
+    _id: 1,
+    Title: 'Ms',
+    Firstname: 'Niamh',
+    Surname: 'Dunne',
+    Mobile: '1233675332',
+    Email_Address: 'ndunne4@mail.com'
+  },
+  {
+    _id: 2,
+    Title: 'Mx',
+    Firstname: 'Owen',
+    Surname: 'Clarke',
+    Mobile: '1235934775',
+    Email_Address: 'owenc26@mail.com'
+  },
+  {
+    _id: 3,
+    Title: 'Dr',
+    Firstname: 'Ciaran',
+    Surname: 'Anderson',
+    Mobile: '1239864336',
+    Email_Address: 'andersonciaran1@mail.com'
+  },
+  {
+    _id: 4,
+    Title: 'Mrs',
+    Firstname: 'Lauren',
+    Surname: 'Casey',
+    Mobile: '1232574335',
+    Email_Address: 'lauren.casey@mail.com'
+  },
+  {
+    _id: 6,
+    Title: 'Dr',
+    Firstname: 'James',
+    Surname: 'Malone',
+    Mobile: '1233424664',
+    Email_Address: 'j.malone11@mail.com'
+  }
+]
+[
+  {
+    _id: 1,
+    AddressLine1: '93 Abbeypark',
+    AddressLine2: 'Ballyfield',
+    Town: 'Naas',
+    CountyCity: 'Kildare',
+    Eircode: 'W11 BK35'
+  },
+  {
+    _id: 2,
+    AddressLine1: '28 Grangeview',
+    AddressLine2: 'Parkwest',
+    Town: 'Finglas',
+    CountyCity: 'Dublin',
+    Eircode: 'D17 HK85'
+  },
+  {
+    _id: 3,
+    AddressLine1: '12 The Drive',
+    AddressLine2: 'Headfort',
+    Town: 'Navan',
+    CountyCity: 'Meath',
+    Eircode: 'M21 KD35'
+  },
+  {
+    _id: 4,
+    AddressLine1: '49 Greenway',
+    AddressLine2: 'Ballinafad',
+    Town: 'Maynooth',
+    CountyCity: 'Kildare',
+    Eircode: 'W45 BK35'
+  },
+  {
+    _id: 6,
+    AddressLine1: '6 Citypark',
+    AddressLine2: 'Citywest',
+    Town: 'Clondalkin',
+    CountyCity: 'Dublin',
+    Eircode: 'D44 MR76'
+  }
+]
+[
+  {
+    _id: 1,
+    AddressLine1: '93 Abbeypark',
+    AddressLine2: 'Ballyfield',
+    Town: 'Naas',
+    CountyCity: 'Kildare',
+    Eircode: 'W11 BK35'
+  },
+  {
+    _id: 2,
+    AddressLine1: '28 Grangeview',
+    AddressLine2: 'Parkwest',
+    Town: 'Finglas',
+    CountyCity: 'Dublin',
+    Eircode: 'D17 HK85'
+  },
+  {
+    _id: 3,
+    AddressLine1: '12 The Drive',
+    AddressLine2: 'Headfort',
+    Town: 'Navan',
+    CountyCity: 'Meath',
+    Eircode: 'M21 KD35'
+  },
+  {
+    _id: 4,
+    AddressLine1: '49 Greenway',
+    AddressLine2: 'Ballinafad',
+    Town: 'Maynooth',
+    CountyCity: 'Kildare',
+    Eircode: 'W45 BK35'
+  },
+  {
+    _id: 6,
+    AddressLine1: '6 Citypark',
+    AddressLine2: 'Citywest',
+    Town: 'Clondalkin',
+    CountyCity: 'Dublin',
+    Eircode: 'D44 MR76'
+  }
+]
+[
+  {
+    _id: 1,
+    Maunfacturer: 'Apple',
+    Model: 'iPhone XR',
+    Price: '€749.99'
+  },
+  {
+    _id: 2,
+    Maunfacturer: 'Apple',
+    Model: 'iPhone 11',
+    Price: '€899.99'
+  },
+  {
+    _id: 3,
+    Maunfacturer: 'Apple',
+    Model: 'iPhone XS',
+    Price: '€699.99'
+  },
+  {
+    _id: 4,
+    Maunfacturer: 'Samsung',
+    Model: 'Galaxy S10+',
+    Price: '€999.99'
+  },
+  {
+    _id: 5,
+    Maunfacturer: 'Samsung',
+    Model: 'Galaxy S10e',
+    Price: '€499.99'
+  },
+  {
+    _id: 7,
+    Maunfacturer: 'Huawei',
+    Model: 'P40 Pro',
+    Price: '€1149.99'
+  },
+  {
+    _id: 8,
+    Maunfacturer: 'Huawei',
+    Model: 'P30 Pro',
+    Price: '€599.99'
+  },
+  { _id: 9, Maunfacturer: 'Nokia', Model: '7 Plus', Price: '€249.99' },
+  { _id: 10, Maunfacturer: 'Nokia', Model: '7.2', Price: '€299.99' }
+]
+[
+  {
+    _id: 1,
+    Name: 'CustomersID: 1',
+    Phones_Purchased: 'mobilePhonesID: 5,6',
+    Quantity: '2',
+    OrderNo: '#01'
+  },
+  {
+    _id: 2,
+    Name: 'CustomersID: 3',
+    Phones_Purchased: 'mobilePhonesID: 2',
+    Quantity: '1',
+    OrderNo: '#01'
+  },
+  {
+    _id: 3,
+    Name: 'CustomersID: 1',
+    Phones_Purchased: 'mobilePhonesID: 8',
+    Quantity: '1',
+    OrderNo: '#02'
+  },
+  {
+    _id: 5,
+    Name: 'CustomersID: 2',
+    Phones_Purchased: 'mobilePhonesID: 5',
+    Quantity: '1',
+    OrderNo: '#01'
+  },
+  {
+    _id: 6,
+    Name: 'CustomersID: 6',
+    Phones_Purchased: 'mobilePhonesID: 9,10',
+    Quantity: '2',
+    OrderNo: '#01'
+  }
+]

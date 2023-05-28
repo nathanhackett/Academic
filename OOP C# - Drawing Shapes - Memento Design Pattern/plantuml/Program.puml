@@ -1,0 +1,84 @@
+@startuml
+class Program {
+    {static} Main() : void
+}
+class Rectangle {
+    + X : int <<get>>
+    + Y : int <<get>>
+    + H : int <<get>>
+    + W : int <<get>>
+    + Rectangle(x:int, y:int, h:int, w:int)
+    + <<override>> ToString() : string
+}
+class Circle {
+    + X : int <<get>>
+    + Y : int <<get>>
+    + R : int <<get>>
+    + Circle(x:int, y:int, r:int)
+    + <<override>> ToString() : string
+}
+class Ellipse {
+    + X : int <<get>>
+    + Y : int <<get>>
+    + RX : int <<get>>
+    + RY : int <<get>>
+    + Ellipse(x:int, y:int, rx:int, ry:int)
+    + <<override>> ToString() : string
+}
+class Line {
+    + X1 : int <<get>>
+    + Y1 : int <<get>>
+    + X2 : int <<get>>
+    + Y2 : int <<get>>
+    + Line(x1:int, y1:int, x2:int, y2:int)
+    + <<override>> ToString() : string
+}
+class Polyline {
+    + Points : string <<get>> <<set>>
+    + Polyline()
+    + Polyline(points:string)
+    + <<override>> ToString() : string
+}
+class Polygon {
+    + Points : string <<get>> <<set>>
+    + Polygon()
+    + Polygon(points:string)
+    + <<override>> ToString() : string
+}
+class Path {
+    + Points : string <<get>> <<set>>
+    + Path()
+    + Path(points:string)
+    + <<override>> ToString() : string
+}
+class Originator {
+    + Add(shape:string) : void
+    + RemoveAt() : void
+    + Count() : int
+    + SaveMemento() : Memento
+    + RestoreMemento(memento:Memento) : void
+    + ListShapes() : List<string>
+    + GetShapes() : void
+}
+class Memento {
+    + Memento(shapeList:ArrayList)
+}
+class Caretaker {
+    + AddMemento(m:Memento) : void
+    + ClearMemento() : void
+    + GetMemento() : Memento
+}
+Program +-- Rectangle
+Program +-- Circle
+Program +-- Ellipse
+Program +-- Line
+Program +-- Polyline
+Program +-- Polygon
+Program +-- Path
+Program +-- Originator
+Originator --> "ShapeList" ArrayList
+Program +-- Memento
+Memento --> "ShapeList" ArrayList
+Program +-- Caretaker
+Caretaker --> "Memento" Memento
+@enduml
